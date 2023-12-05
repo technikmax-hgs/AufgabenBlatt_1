@@ -7,15 +7,15 @@ double oberflaeche(float l, float b, float t);
 double volumen(float l, float b, float t);
 //void aufgabe_1();
 //void aufgabe_2();
-//void aufgabe_3();
-void aufgabe_4();
+void aufgabe_3();
+//void aufgabe_4();
 
 int main()
 {
     //aufgabe_1();
     //aufgabe_2();
-    //aufgabe_3();
-    aufgabe_4();
+   aufgabe_3();
+    //aufgabe_4();
 }
 
 // Programm ausführen: STRG+F5 oder "Debuggen" > Menü "Ohne Debuggen starten"
@@ -113,7 +113,7 @@ int main()
  }*/
 
 
- /*void aufgabe_3()
+ void aufgabe_3()
  {
      float W1;
      float W2;
@@ -137,11 +137,11 @@ int main()
 
 
 
- }*/
+ }
 
 
 
-void aufgabe_4()
+/*void aufgabe_4()
 {
 
     char wort;
@@ -156,5 +156,4 @@ void aufgabe_4()
     std::cout << " Das ist es in ASCII-Code " << antwort;
 
 }
-
-
+*/
