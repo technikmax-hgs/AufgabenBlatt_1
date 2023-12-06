@@ -7,15 +7,17 @@ double oberflaeche(float l, float b, float t);
 double volumen(float l, float b, float t);
 //void aufgabe_1();
 //void aufgabe_2();
-void aufgabe_3();
-//void aufgabe_4();
+//void aufgabe_3();
+void aufgabe_4();
+void aufgabe_5();
 
 int main()
 {
     //aufgabe_1();
     //aufgabe_2();
-   aufgabe_3();
+    //aufgabe_3();
     //aufgabe_4();
+    aufgabe_5();
 }
 
 // Programm ausführen: STRG+F5 oder "Debuggen" > Menü "Ohne Debuggen starten"
@@ -94,7 +96,7 @@ int main()
 }
 */
 
-/*void aufgabe_2()
+void aufgabe_2()
   {
     float ergb;
     float endergb;
@@ -110,7 +112,7 @@ int main()
     }
 
 
- }*/
+ }
 
 
  void aufgabe_3()
@@ -141,19 +143,53 @@ int main()
 
 
 
-/*void aufgabe_4()
+void aufgabe_4()
 {
 
     char wort;
-    unsigned antwort;
+ 
 
-    std::cout << "Zeichen welches in ASCII-Code konvertiert werden soll";
+    std::cout << "Zeichen welches in ASCII-Code konvertiert werden soll: ";
 
-    std::cin >> wort;
-
-    unsigned antwort = char(wort);
-
-    std::cout << " Das ist es in ASCII-Code " << antwort;
+    if (std::cin >> wort)
+    {
+        std::cout << " Das ist es in ASCII-Code " << unsigned(wort);
+    }
+    else
+        std::cout << "Flasche Eingabe "; 
 
 }
-*/
+
+
+void aufgabe_5()
+{
+    char Buchstabe; 
+    std::cout << "Geben sie denn Buchtsaben ein welcher ueberprueft werden soll: ";
+
+        
+    if (std::cin >> Buchstabe)
+    {
+        if ('a' || 'A' || 'u' || 'U' || 'i' || 'I' || 'e' || 'E' || 'O' || 'o')
+        {
+            std::cout << "Ist ein Vokal " << Buchstabe;
+
+        }
+        else
+        {
+
+            std::cout << "Umlaut " << Buchstabe;
+        }
+    }
+        else
+        {
+            std::cout << "Flasche Eingabe";
+        } 
+
+      
+        
+       
+
+
+
+
+}
