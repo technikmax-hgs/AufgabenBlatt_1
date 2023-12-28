@@ -1,195 +1,154 @@
-// Aufgabenblatt1.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
-//
-
+/* Aufgabenblatt1.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms. */
 #include <iostream>
+#include <stdexcept>
+
 
 double oberflaeche(float l, float b, float t);
 double volumen(float l, float b, float t);
-//void aufgabe_1();
-//void aufgabe_2();
-//void aufgabe_3();
+void aufgabe_1();
+void aufgabe_2();
+void aufgabe_3();
 void aufgabe_4();
 void aufgabe_5();
 
 int main()
 {
-    //aufgabe_1();
-    //aufgabe_2();
-    //aufgabe_3();
-    //aufgabe_4();
+    aufgabe_1();
+    aufgabe_2();
+    aufgabe_3();
+    aufgabe_4();
     aufgabe_5();
 }
 
-// Programm ausführen: STRG+F5 oder "Debuggen" > Menü "Ohne Debuggen starten"
-// Programm debuggen: F5 oder "Debuggen" > Menü "Debuggen starten"
-
-// Tipps für den Einstieg: 
-//   1. Verwenden Sie das Projektmappen-Explorer-Fenster zum Hinzufügen/Verwalten von Dateien.
-//   2. Verwenden Sie das Team Explorer-Fenster zum Herstellen einer Verbindung mit der Quellcodeverwaltung.
-//   3. Verwenden Sie das Ausgabefenster, um die Buildausgabe und andere Nachrichten anzuzeigen.
-//   4. Verwenden Sie das Fenster "Fehlerliste", um Fehler anzuzeigen.
-//   5. Wechseln Sie zu "Projekt" > "Neues Element hinzufügen", um neue Codedateien zu erstellen, bzw. zu "Projekt" > "Vorhandenes Element hinzufügen", um dem Projekt vorhandene Codedateien hinzuzufügen.
-//   6. Um dieses Projekt später erneut zu öffnen, wechseln Sie zu "Datei" > "Öffnen" > "Projekt", und wählen Sie die SLN-Datei aus.
-
-                     /*void aufgabe_1()
-                            {
-                                    float l, b, t;
-
-                                    std::cout << "Laenge der Quadrates: ";
-
-                                             if (std::cin >> l && l < 0)
-                                                      {
-
-                                                       }
-                                             else
-                                                      {
-                                                    std::cout << "Falscher wert";
-                                                       }
-
-                                     std::cout << "Breite der Quadrates: ";
-
-                                       if (std::cin >> b && l < 0)
-                {
-
-                 }
-             else
-                 {
-                    std::cout << "Falscher wert";
-                 }
-        std::cout << "Tiefe der Quadrates: ";
-             if (std::cin >> t && l < 0)
-                    {
-
-                     }
-             else
-                        {
-                 std::cout << "Falscher wert";
-                        }
-
-
-
-
-
-
-
-
-    double e_Ober = oberflaeche(l, b, t);
-    double e_Vol = volumen(l, b, t);
-
-
-    std::cout << "die Oberflaeche des Quadrates betraegt Quadratmeter " << e_Ober << " und das Volumen ist Qubicmeter " << e_Vol <<std::endl ;
-
-
+double oberflaeche(float length, float width, float depth)
+{
+    return (2 * length * width) + (2 * length * depth) + (2 * depth * width);
 }
 
-            double oberflaeche(float l, float b, float t)
+double volumen (float length, float width, float depth)
 {
-
-    return (2 * l * b) + (2 * l * t) + (2 * t * b);
-
-   }
-            double volumen (float l, float b, float t)
-{
-
-
-    return (l * b * t);
+    return (length * width * depth);
 }
-*/
+
+void aufgabe_1()
+{
+    float length = 0.0;
+    float width = 0.0;
+    float depth = 0.0;
+
+    /* Receives the length of the square */
+    std::cout << "Laenge des Quadrates: ";
+    std::cin >> length;
+
+    if (!length > 0)
+    {
+        std::cerr << "Falscher Wert!" << std::endl;
+        return;
+    }
+        
+    /* Receives the width of the square */
+    std::cout << "Breite der Quadrates: ";
+    std::cin >> width;
+
+    if (!width > 0)
+    {
+        std::cerr << "Falscher Wert!" << std::endl;
+        return;
+    }
+        
+    /* Receives the depth of the square */
+    std::cout << "Tiefe der Quadrates: ";
+    std::cin >> depth;
+
+    if (!depth > 0)
+    {
+        std::cerr << "Falscher Wert!" << std::endl;
+        return;
+    }
+    
+    /* Calculates the surface of the square */
+    double surface = oberflaeche(length, width, depth);
+    
+    /* Calculates the volume of the square */
+    double volume = volumen(length, width, depth);
+
+    std::cout << "Die Oberflaeche des Quadrates betraegt Quadratmeter: " << surface << " und das Volumen ist Qubicmeter: " << volume << std::endl;
+}
 
 void aufgabe_2()
-  {
-    float ergb;
-    float endergb;
-    float temperatur;
-    std::cout << "Grad Fahrfahrenheit eingeben";
-    if (std::cin >> temperatur)
-    {
-        ergb = temperatur - 32;
-        endergb = ergb * 5 / 9;
+{
+    float celsius = 0.0;
+    float fahren = 0.0;
 
-        std::cout << "das ist das ergbnis in Grad Ceslsius " << endergb;
+    /* Receive Fahren */
+    std::cout << "Grad Fahrenheit eingeben: ";
+    std::cin >> fahren;
 
-    }
+    /* Calculate celsius */
+    celsius = (fahren - 32) * (5.0 / 9.0); 
+    std::cout << celsius << " Celsius" << std::endl;
+}
 
+void aufgabe_3()
+{
+    float res1 = 0.0;
+    float res2 = 0.0;
+    float sol1 = 0.0;
+    float sol2 = 0.0;
 
- }
+    /* Receive resistances */
+    std::cout << "Widerstandswert 1 eingeben: ";
+    std::cin >> res1;
+    std::cout << "Widerstandswert 2 eingeben: ";
+    std::cin >> res2;
 
+    /* Checks if the input is numeric */
+    if (!(isdigit(res1) && isdigit(res2)))
+        std::cerr << "Keine Zahl" << std::endl;
 
- void aufgabe_3()
- {
-     float W1;
-     float W2;
-     float e1;
-     float e2;
+    /* Calculate total resistance (row) */
+    sol1 = res1 + res2;
+    std::cout << "Gesamtwiderstand in Reihe ist: " << sol1 << std::endl;
 
-     std::cout << "Widerstandswert 1 eingeben";
-
-     std::cin >> W1;
-
-
-     std::cout << "Widerstandswert 2 eingeben";
-
-     std::cin >> W2;
-
-     e1 = W1 + W2;
-     std::cout << " Gesamtwiderstand in Reihe ist " << e1;
-
-     e2 = 1 / W1 + 1 / W2;
-     std::cout << " Gesamtweiderstand Paralle ist " << e2;
-
-
-
- }
-
-
+    /* Calculate total resistance (parallel) */
+    sol2 = 1 / res1 + 1 / res2;
+    std::cout << "Gesamtwiderstand Parallel ist: " << sol2 << std::endl;
+}
 
 void aufgabe_4()
 {
-
-    char wort;
+    char inp_character = 0;
  
-
+    /* Receive char */
     std::cout << "Zeichen welches in ASCII-Code konvertiert werden soll: ";
-
-    if (std::cin >> wort)
-    {
-        std::cout << " Das ist es in ASCII-Code " << unsigned(wort);
-    }
+    
+    if (std::cin >> inp_character)
+        std::cout << "Das ist es in ASCII-Code: " << unsigned(inp_character) << std::endl;
     else
-        std::cout << "Flasche Eingabe "; 
-
+        std::cerr << "Falsche Eingabe: " << inp_character << std::endl; 
 }
-
 
 void aufgabe_5()
 {
-    char Buchstabe; 
-    std::cout << "Geben sie denn Buchtsaben ein welcher ueberprueft werden soll: ";
+    static char vocals[] = { 'a', 'e', 'i', 'o', 'u' };
+    char inp_character = 0; 
+    bool temp = false;
 
-        
-    if (std::cin >> Buchstabe)
+    /* Receive char */
+    std::cout << "Geben sie denn Buchstaben ein welcher ueberprueft werden soll: ";    
+    std::cin >> inp_character;
+
+    /* Check  */
+    if (!isdigit(inp_character))
     {
-        if ('a' || 'A' || 'u' || 'U' || 'i' || 'I' || 'e' || 'E' || 'O' || 'o')
-        {
-            std::cout << "Ist ein Vokal " << Buchstabe;
-
-        }
+        /* Check if its a vocal */
+        for (char c : vocals)
+            temp = temp || inp_character == c || inp_character == toupper(c);
+        if (temp)
+            std::cout << "Ist ein Vokal: " << inp_character << std::endl;
         else
-        {
-
-            std::cout << "Umlaut " << Buchstabe;
-        }
+            std::cout << "Ist ein Umlaut: " << inp_character << std::endl;
     }
-        else
-        {
-            std::cout << "Flasche Eingabe";
-        } 
-
-      
-        
-       
-
-
-
-
+    else 
+        std::cerr << "Falsch Eingabe" << std::endl;
 }
